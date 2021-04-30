@@ -14,14 +14,14 @@ set :wp_email, 'helpdesk@unep-wcmc.org'
 set :deploy_user, 'wcmc'
 
 # The WordPress 'Site Title' for the website
-set :wp_sitename, 'ecosystemassessments'
+set :wp_sitename, 'elearning'
 
 # The local environment URL.
 set :wp_localurl, 'http://wpdeploy.local'
 
 # An identifying name for the application to be used by Capistrano
-set :application, 'ecosystemassessments'
-set :repo_url, 'git@github.com:unepwcmc/ecosystemassessments-wordpress.git'
+set :application, 'elearning'
+set :repo_url, 'git@github.com:unepwcmc/wordpress_elearning.git'
 
 
 ################################################################################
@@ -38,7 +38,7 @@ set :ssh_options, forward_agent: true
 ## Linked files and directories (symlinks)
 ################################################################################
 
-set :linked_files, %w(wp-config.php .htaccess robots.txt index.php content/themes/ea/.env)
+set :linked_files, %w(wp-config.php .htaccess robots.txt index.php content/themes/elearning/.env)
 set :linked_dirs, %w(content/uploads content/plugins content/languages)
 
 
