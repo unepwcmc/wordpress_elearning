@@ -1,0 +1,91 @@
+h3.listing-modal__title {
+  @include font_heading-3;
+  font-weight: $fw-bold;
+  margin-bottom: $item-padding-smaller;
+}
+
+h4.listing-modal__heading {
+  @include font_heading-3;
+  margin-bottom: $item-padding-small;
+}
+
+.listing-modal__columns {
+  @include break-min($xs) {
+    display: flex;
+  }
+}
+
+.listing-modal__column {
+  @include break-min($xs) {
+    &.listing-modal__column--small {
+      margin-right: $grid-gap * 1.5;
+      width: calc(((1 / 3) * 100%) - #{($grid-gap * 1.5) / 2});
+
+      flex: 0 0 calc(((1 / 3) * 100%) - #{($grid-gap * 1.5) / 2});
+    }
+    &.listing-modal__column--large {
+      width: calc(((2 / 3) * 100%) - #{($grid-gap * 1.5) / 2});
+
+      flex: 1 0 calc(((2 / 3) * 100%) - #{($grid-gap * 1.5) / 2});
+    }
+  }
+}
+
+.listing-modal__image-wrap {
+  position: relative;
+  padding-bottom: 100%;
+  margin-top: $item-padding-small;
+  margin-bottom: $item-padding;
+
+  @include break-min($xs) {
+    margin-top: $item-padding-smaller;
+    margin-bottom: 0;
+  }
+}
+
+.listing-modal__image {
+  @include absolute_fill;
+  @include object_fit_cover;
+
+  .listing--member & {
+    @include object_fit_contain;
+  }
+}
+
+.listing-modal__content {
+  margin-top: $item-padding;
+
+  @include break-min($xs) {
+    margin-top: 0;
+  }
+
+  p {
+    @include font_base_text;
+  }
+}
+
+.listing-modal__items {
+  @include structural_ul;
+}
+
+.listing-modal__item {
+  @include no_bullets;
+  margin-bottom: $item-padding-smaller;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a.listing-modal__link {
+  @include font_small_text;
+  text-decoration: none;
+  font-weight: $fw-bold;
+  word-break: break-all;
+}
+
+.listing-modal__social-icon {
+  width: 15px;
+  height: 12px;
+  display: inline-block;
+}

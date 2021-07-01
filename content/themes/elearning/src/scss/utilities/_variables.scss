@@ -1,0 +1,110 @@
+//-------------------------------------------------
+// GLOBAL
+//-------------------------------------------------
+
+$global-inner: 1240px;
+$grid-gap: 24px;
+
+$item-padding-smaller: 8px;
+$item-padding-small: 16px;
+$item-padding: 24px;
+
+$gutter-small: 24px;
+$gutter-medium: 48px;
+$gutter-large: 100px;
+
+$restrained-width: 640px + ($gutter-large * 2); // 640px
+
+$spacer-xsmall: 36px;
+$spacer-small: 36px;
+$spacer-medium: 48px;
+$spacer-large: 60px;
+$spacer-xlarge: 100px;
+
+//-------------------------------------------------
+// WORDPRESS
+//-------------------------------------------------
+
+$admin-bar-mobile: 46px;
+$admin-bar: 32px;
+
+//-------------------------------------------------
+// FONTS
+//-------------------------------------------------
+
+$font-heading: 'Impact', sans-serif;
+$font-body: 'Roboto', sans-serif;
+$font-base-size: 16px;
+$font-base-line-height: 19px;
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-black: 900;
+
+//-------------------------------------------------
+// COLOURS
+//-------------------------------------------------
+
+$color-primary: #01ACEA;
+$color-secondary: #2f2f2f;
+
+$color-accent: #FAC359;
+$color-accent-dark: #F89C1B;
+
+$color-darker-grey: #57575D;
+$color-dark-grey: #4A4D52;
+$color-mid-grey: #E5E5E5;
+$color-light-grey: #F0F0F0;
+$color-white: #ffffff;
+
+$color-border: rgba($color-secondary,0.25);
+$color-border-light: rgba(255,255,255,0.25);
+$color-body-font: $color-secondary;
+$color-error: #dc3232;
+$color-grey-text: #8D8D8D;
+$color-link: #4968b3;
+$color-headings: $color-secondary;
+$color-tools-icons: $color-primary;
+
+$color-header: $color-secondary;
+$color-footer: $color-secondary;
+
+//-------------------------------------------------
+// GRADIENTS
+//-------------------------------------------------
+
+$card-gradient: linear-gradient(180deg, rgba($color-secondary, 0.55) 0%, rgba($color-secondary, 0.15) 40%, rgba($color-secondary, 0) 100%);
+
+$hero-gradient: linear-gradient(180deg, rgba($color-secondary, 0.65) 0%, rgba($color-secondary, 0.25) 35%, rgba($color-secondary, 0.25) 100%);
+
+//-------------------------------------------------
+// BREAKPOINTS
+//-------------------------------------------------
+
+$xxs: 451px;
+$xs: 600px;
+$sm: 768px;
+$md: 900px;
+$lg: 1280px;
+$xlg: 1440px;
+
+//-------------------------------------------------
+// HEADER
+//-------------------------------------------------
+
+$headerMobileHeight: 60px;
+$headerMobileHeightScrolled: 40px;
+$headerHeight: 70px;
+$headerHeightScrolled: 60px;
+$headerNavShow: $md;
+
+//-------------------------------------------------
+// DRAWERS
+//-------------------------------------------------
+
+$menuDrawerHeaderHeight: calc(#{$item-padding} + 24px);
+$filterDrawerHeaderHeight: calc(#{$grid-gap * 2} + 26px);
+$filterDrawerFooterHeight: calc(74px - 5px);

@@ -1,0 +1,32 @@
+.section {
+  @include spacer;
+}
+
+.section__inner {
+  .home &,
+  .widgets & {
+    @include inner;
+  }
+}
+
+.section__header {
+  @include section_header;
+}
+
+h3.section__title {
+  @include section_title;
+}
+
+.section__items,
+.editor-styles-wrapper ul.section__items {
+  @include listing_items;
+
+  @include break-min($md) {
+    margin-top: 0;
+  }
+}
+
+.section__item,
+.editor-styles-wrapper li.section__item {
+  @include listing_item;
+}

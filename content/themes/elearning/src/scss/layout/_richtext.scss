@@ -1,0 +1,76 @@
+.richtext {
+
+  > h2 {
+    @include font_heading-3;
+  }
+
+  > h3 {
+    @include font_heading-4;
+    font-weight: $fw-medium;
+  }
+
+  > h2, > h3, > h4 {
+    margin-top: #{$grid-gap * 2};
+    margin-bottom: $grid-gap;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  > p {
+    margin-top: #{$grid-gap * 1.5};
+    margin-bottom: #{$grid-gap * 1.5};
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  > a,
+  > p > a {
+    color: $color-secondary;
+    font-weight: $fw-bold;
+    text-decoration: underline;
+  }
+
+  > h2 + p, > h3 + p, > h4 + p {
+    margin-top: $grid-gap;
+  }
+
+  .wp-block-quote {
+    margin-top: #{$grid-gap * 2};
+    margin-bottom: #{$grid-gap * 2};
+
+    p {
+      @include font_heading-3;
+      color: $color-primary;
+      font-weight: $fw-regular;
+    }
+  }
+
+  > ol, > ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+    li {
+      color: inherit;
+      list-style: disc outside none;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .constrained {
+    @include break-min($md) {
+      max-width: calc((8 / 12) * 100%);
+    }
+  }
+}

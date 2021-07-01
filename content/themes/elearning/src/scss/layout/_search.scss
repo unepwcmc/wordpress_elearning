@@ -1,0 +1,28 @@
+.layout-search {
+  @include break-min($xs) {
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.layout-search__form {
+  @include break-min($xs) {
+    display: flex;
+  }
+}
+
+.layout-search__input {
+  @include break-min($xs) {
+    flex: 1 1 auto;
+    margin-right: $grid-gap;
+  }
+}
+
+.layout-search__button[type="submit"] {
+  @include break-min($xs) {
+    width: 120px;
+    flex: 0 0 120px;
+    margin: 0;
+  }
+}

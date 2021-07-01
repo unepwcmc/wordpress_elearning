@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.04 14.66"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2px" d="M0 7.33h13.42M9 .71l6.62 6.62L9 13.96"/></g></g></svg>

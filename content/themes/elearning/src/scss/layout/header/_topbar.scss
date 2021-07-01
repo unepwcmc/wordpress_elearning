@@ -1,0 +1,47 @@
+.layout-topbar {
+  background-color: $color-secondary;
+  color: $color-white;
+
+  display: block;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  z-index: 8;
+
+  @include break-min($headerNavShow) {
+    display: none;
+  }
+
+  .logged-in.admin-bar & {
+    top: 46px;
+
+    @include break-min(783px) {
+      top: 64px;
+    }
+
+    @include break-min(939px) {
+      top: 32px;
+    }
+
+    @include break-min($headerNavShow) {
+      top: 32px;
+    }
+  }
+}
+
+
+.layout-topbar__inner {
+  padding-left: $grid-gap;
+  padding-right: $grid-gap;
+}
+
+.layout-topbar__body {
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

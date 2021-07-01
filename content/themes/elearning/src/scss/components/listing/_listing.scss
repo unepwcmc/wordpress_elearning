@@ -1,0 +1,81 @@
+.listing__header {
+  padding-top: $spacer-small;
+  padding-bottom: $spacer-small;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.listing__filters {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+p.listing__text {
+  @include font_small_text;
+  line-height: 50px;
+  margin-bottom: 0;
+
+  span {
+    display: none;
+
+    @include break-min($sm) {
+      display: inline;
+    }
+  }
+}
+
+.listing_text-button {
+  @include button_text;
+  @include font_small_text;
+  margin-left: auto;
+}
+
+.listing__items {
+  @include listing_items;
+
+  @include break-min($md) {
+    margin-top: 0;
+  }
+}
+
+.listing__item {
+  @include listing_item;
+
+  .listing-latest & {
+    @include break-min-max($sm, $md) {
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+}
+
+.listing__loader {
+  padding-top: $spacer-medium;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  &.listing__loader--padded {
+    padding: $spacer-xlarge;
+  }
+
+  svg {
+    width: 50px;
+    transform: scale(-1,1);
+  }
+}
+
+.listing__empty {
+  @include spacer;
+  text-align: center;
+}
+
+.listing___empty-message {
+  @include font_heading-3;
+}

@@ -1,0 +1,47 @@
+.hero-basic {
+    background-color: $color-secondary;
+    overflow: hidden;
+    min-height: 320px;
+
+    display: flex;
+
+    position: relative;
+
+    @include break-min($sm) {
+      min-height: 360px;
+    }
+
+    @include break-min($md) {
+      min-height: 530px;
+    }
+  }
+
+  .hero-basic__inner {
+    @include inner;
+    display: flex;
+  }
+
+  .hero-basic__body {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    z-index: 3;
+  }
+
+  h2.hero-basic__title {
+    @include font_heading-1;
+    color: $color-white;
+
+    @include break-min($md) {
+      max-width: calc((9 / 12) * 100%);
+    }
+  }
+
+  .hero-basic__background-image {
+    @include absolute_fill;
+    @include object-fit-cover;
+    z-index: 1;
+  }

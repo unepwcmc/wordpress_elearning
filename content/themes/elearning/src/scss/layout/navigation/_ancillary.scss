@@ -1,0 +1,31 @@
+.menu-ancillary-container .menu {
+  li {
+    margin-bottom: $item-padding;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: currentColor;
+
+      &:hover::before {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      &[aria-current="page"] {
+        font-weight: $fw-bold;
+      }
+    }
+
+    &.current-menu-item > a {
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+.header-search {
+  position: relative;
+}
+
+.header-search__toggle {
+  appearance: none;
+  background: none;
+  border: 0;
+  color: $color-white;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+
+  display: block;
+
+  transition: color .3s ease;
+
+  svg {
+    width: 32px;
+    height: 32px;
+
+    transition: opacity .3s ease;
+
+    @include break-min($md) {
+      opacity: 0.8;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .header-search--bar-active &,
+  &:hover {
+    svg {
+      opacity: 1;
+    }
+  }
+}
+
+.header-search__bar {
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+  visiblity: hidden;
+  max-width: 100%;
+
+  position: fixed;
+  top: 85px;
+  right: #{$grid-gap / 2};
+  left: #{$grid-gap / 2};
+  z-index: 10;
+
+  transition: opacity 0.5s ease, visiblity 0.5s ease;
+
+  @include break-min($xs) {
+    width: 100%;
+    min-width: 450px;
+
+    position: absolute;
+    top: calc(100% + 5px);
+    right: -58px;
+    left: auto;
+  }
+
+  @include break-min($md) {
+    right: -36px;
+  }
+
+  .admin-bar & {
+    top: 130px;
+
+    @include break-min($xs) {
+      top: calc(100% + 5px);
+    }
+  }
+
+  .header-search--bar-active & {
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+}
+
+.header-search__form {
+  background: #D6D6D6;
+  border: 8px solid #D6D6D6;
+  border-radius: 3px;
+  margin-top: 15px;
+
+  display: flex;
+  position: relative;
+
+  &::after {
+    border: 15px solid transparent;
+    border-bottom: 15px solid #D6D6D6;
+    content: '';
+    width: 30px;
+    height: 30px;
+
+    display: block;
+
+    position: absolute;
+    top: -37px;
+    right: 63px;
+
+    @include break-min($xs) {
+      right: 50px;
+    }
+
+    @include break-min($md) {
+      right: 23.5px;
+    }
+  }
+}
+
+.header-search__input {
+  border-radius: 3px 0 0 3px;
+  border-right: 0;
+  padding: 8.5px 10px;
+
+  flex: 1 1 auto;
+}
+
+input.header-search__button {
+  background-color: $color-primary;
+  border-color: $color-secondary;
+  border-radius: 0 3px 3px 0;
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+  padding: 5px 10px;
+  width: 80px;
+  min-width: 0;
+
+  flex: 0 0 80px;
+
+  &:hover {
+    background-color: darken($color-primary, 10%);
+    color: #fff;
+  }
+}

@@ -1,0 +1,139 @@
+.header {
+  background-color: $color-header;
+  color: $color-white;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+
+  transition: color .3s ease, background-color .3s ease;
+
+  .logged-in.admin-bar & {
+    top: 46px;
+
+    @include break-min(783px) {
+      top: 64px;
+    }
+
+    @include break-min($headerNavShow) {
+      top: 32px;
+    }
+  }
+}
+
+.header__inner {
+  @include inner;
+}
+
+.header__items {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: $headerMobileHeight;
+
+  display: flex;
+
+  transition: height .3s ease;
+
+  .header--scrolled & {
+    height: $headerMobileHeightScrolled;
+  }
+
+  @include break-min($headerNavShow) {
+    height: $headerHeight;
+
+    .header--scrolled & {
+      height: $headerHeightScrolled;
+    }
+  }
+}
+
+.header__item {
+  flex: 1 1 auto;
+}
+
+.header__item--logo {
+  width: 140px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 140px;
+
+  position: relative;
+
+  transition: color .3s ease, flex-basis .3s ease, width .3s ease;
+
+  @include break-min($headerNavShow) {
+    width: 260px;
+
+    flex: 0 0 260px;
+  }
+
+  .header--scrolled & {
+    // color: $color-primary;
+    // width: 32px;
+    //
+    // flex-basis: 32px;
+    //
+    @include break-min($headerNavShow) {
+      width: 165px;
+
+      flex-basis: 165px;
+    }
+  }
+}
+
+.header__title {
+  @include screen_reader_only;
+}
+
+a.header__logo {
+  display: block;
+
+  position: absolute;
+  top: -10px;
+  right: 0;
+  left: 0;
+  width: 100%;
+
+  // .header & {
+  //   height: $headerHeight;
+  //   will-change: height;
+  // }
+  //
+  // .header--scrolled & {
+  //   height: $headerHeightScrolled;
+  // }
+}
+
+.header__item--nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include break-min($md) {
+    flex-wrap: wrap;
+  }
+}
+
+.header__item--tools {
+  display: flex;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+
+  &.header__item--language-switcher {
+    @include break-min($headerNavShow) {
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+
+      .header--scrolled & {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.drawers {
+  z-index: 20;
+}
+
+.drawers__overlay {
+  z-index: 22;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility .3s ease;
+  pointer-events: none;
+
+  .utility__drawer-active & {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  @include break-min($md) {
+    opacity: 0.5;
+  }
+}

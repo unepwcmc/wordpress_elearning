@@ -1,0 +1,11 @@
+/*-------------------------------------------------------------------------------
+Utilities
+-------------------------------------------------------------------------------*/
+
+.utility__restrained {
+  @include restrain_width;
+}
+
+.utility__screen-reader-only {
+  @include screen_reader_only;
+}

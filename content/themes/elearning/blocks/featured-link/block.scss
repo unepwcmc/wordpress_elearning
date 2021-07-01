@@ -1,0 +1,98 @@
+@import "../../src/scss/utilities/variables";
+@import "../../src/scss/utilities/mixins";
+
+.featured-link {
+  @include spacer;
+}
+
+.featured-link__inner {
+  @include inner;
+  position: relative;
+}
+
+.featured-link__columns {
+  @include break-min($sm) {
+    display: flex;
+  }
+}
+
+.featured-link__column {
+  &:first-child {
+    @include break-min($sm) {
+      width: calc((7 / 12) * 100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    @include break-min($sm) {
+      left: $gutter-medium;
+    }
+
+    @include break-min($lg) {
+      width: calc((8 / 12) * 100%);
+
+      left: $gutter-large;
+    }
+  }
+
+  &:last-child {
+    @include break-min($sm) {
+      width: calc((8 / 12) * 100%);
+      margin-left: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    @include break-min($md) {
+      width: calc((7 / 12) * 100%);
+    }
+  }
+}
+
+.featured-link__image-wrapper {
+  padding-bottom: calc((25 / 33) * 100%);
+  position: relative;
+
+  @include break-min($sm) {
+    padding: 0;
+    position: static;
+  }
+}
+
+.featured-link__image {
+  @include absolute_fill;
+  @include object_fit_cover;
+}
+
+.featured-link__content {
+  background-color: $color-white;
+  margin-top: $item-padding-small;
+
+  @include break-min($sm) {
+    margin-top: 3rem; // 48px
+    margin-bottom: 3rem; // 48px
+    padding: 3rem 0 3rem 3rem; // 48px
+  }
+
+  @include break-min($md) {
+    margin-top: 4rem; // 64px
+    margin-bottom: 4rem; // 64px
+    padding: 4rem 0 4rem 4rem; // 64px
+  }
+}
+
+.featured-link__text {
+  @include font_heading-2;
+
+  @include break-min($sm) {
+    margin-bottom: $item-padding-small / 2;
+  }
+}
+
+a.featured-link__link {
+  @include button_arrow;
+  // color: $color-secondary;
+}

@@ -1,0 +1,24 @@
+.listing-latest {
+  @include spacer;
+}
+
+.listing-latest__inner {
+  @include inner;
+}
+
+.listing-latest__header {
+  @include section_header;
+}
+
+h3.listing-latest__title {
+  @include section_title;
+}
+
+.listing-latest__footer {
+  @include spacer_top;
+  text-align: center;
+}
+
+a.listing-latest__link {
+  @include button_with_icon;
+}

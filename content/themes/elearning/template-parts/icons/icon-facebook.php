@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.89 20.39"><g data-name="Layer 2"><path d="M10.89 3.41V.3S7.76-.6 5.44.72s-2.2 3.44-2.2 7.06H0v3.74h3.27v8.87h4v-8.87h2.91l.6-3.74H7.24V5.46c0-1.9 1.43-2 2.41-2.08a6.23 6.23 0 011.24.03z" fill="currentcolor" data-name="Layer 1"/></g></svg>

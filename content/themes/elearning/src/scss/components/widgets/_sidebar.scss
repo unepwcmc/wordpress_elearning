@@ -1,0 +1,20 @@
+.sidebar-widgets__items {
+  margin: 0;
+}
+
+.sidebar-widgets__item {
+  margin-bottom: $grid-gap;
+
+  @include break-min($sm) {
+    margin-bottom: $grid-gap * 2;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h3.sidebar-widgets__title {
+  font-size: 16px;
+  margin-bottom: 0;
+}

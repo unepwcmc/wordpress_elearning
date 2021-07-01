@@ -1,0 +1,16 @@
+.widgets {
+  .single-event &,
+  .single-post & {
+    border-top: 1px solid $color-border;
+  }
+}
+
+.widgets__items {
+  max-width: 100%;
+}
+
+.widgets__item {
+  *:first-child {
+    margin-top: 0 !important;
+  }
+}

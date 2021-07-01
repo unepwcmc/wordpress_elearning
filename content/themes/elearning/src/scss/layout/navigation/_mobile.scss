@@ -1,0 +1,43 @@
+.nav-mobile {
+  .menu {
+    margin: 0;
+    padding: 0;
+
+    li.menu-item {
+      @include no_bullets;
+      position: relative;
+      font-family: $font-heading;
+      letter-spacing: 0.6px;
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: currentColor;
+        line-height: 1;
+      }
+    }
+
+    > li.menu-item {
+      > a {
+        @include font_base_text;
+        padding-top: $item-padding-small;
+        padding-bottom: $item-padding-small;
+      }
+    }
+
+    .sub-menu {
+      margin: 0;
+      padding-left: $item-padding;
+
+      li.menu-item {
+        padding-top: $item-padding;
+        padding-bottom: $item-padding;
+
+        a {
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

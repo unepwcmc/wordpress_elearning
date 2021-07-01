@@ -1,0 +1,46 @@
+.layout-sidebar {
+  @include spacer;
+
+  @include break-min($md) {
+    width: calc(((3 / 12) * 100%) - #{$grid-gap * 2});
+    flex: 1 1 calc(((3 / 12) * 100%) - #{$grid-gap * 2});
+    margin-right: $grid-gap * 2;
+  }
+
+  .layout-container--sidebar-right & {
+    @include break-min($md) {
+      margin-right: 0;
+      margin-left: $grid-gap * 2;
+      order: 2;
+    }
+  }
+}
+
+.layout-sidebar__items {
+  @include structural_ul;
+  @include break-min($sm) {
+    margin-top: $item-padding-smaller;
+  }
+}
+
+.layout-sidebar__item {
+  border-top: 2px solid $color-border;
+  padding-bottom: $item-padding;
+
+  @include break-min($sm) {
+    padding-bottom: $spacer-medium;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+p.layout-sidebar__text {
+  margin-top: $item-padding-smaller;
+  margin-bottom: 0;
+
+  &.layout-sidebar__text--heading {
+    font-weight: $fw-medium;
+  }
+}

@@ -1,0 +1,131 @@
+.drawer {
+  background-color: $color-white;
+  color: $color-secondary;
+  padding-top: $item-padding;
+  padding-bottom: $item-padding;
+  z-index: 24;
+  width: 450px;
+  max-width: 80%;
+  height: 100%;
+
+  display: flex;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateX(500px);
+  transition: transform 0.3s ease;
+
+  &.drawer--left {
+    right: auto;
+    left: 0;
+    transform: translateX(-500px);
+  }
+
+  .logged-in.admin-bar & {
+    max-height: calc(100% - 32px);
+
+    top: 46px;
+
+    @include break-min(783px) {
+      top: 32px;
+    }
+  }
+
+  &.drawer--active {
+    transform: translateX(0);
+  }
+}
+
+.drawer__inner {
+  padding-right: $grid-gap;
+  padding-left: $grid-gap;
+
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+
+  position: relative;
+
+  @include break-min($xs) {
+    padding-right: $grid-gap * 2;
+    padding-left: $grid-gap * 2;
+  }
+}
+
+.drawer__close {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.drawer__header {
+  position: relative;
+
+  [data-drawer="menu"] & {
+    height: $menuDrawerHeaderHeight;
+  }
+
+  [data-drawer="filter"] & {
+    height: $filterDrawerHeaderHeight;
+  }
+}
+
+a.drawer__logo {
+  display: block;
+  transition: transform .3s ease;
+  transform: translateY(0);
+  will-change: transform;
+  width: 200px;
+
+  @include break-min($sm) {
+    width: 300px;
+  }
+}
+
+h3.drawer__title {
+  margin-bottom: 0;
+}
+
+.drawer__body {
+  overflow-y: auto;
+  padding-right: $grid-gap;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: $item-padding;
+  left: $grid-gap;
+
+  @include break-min($xs) {
+    margin-right: $grid-gap;
+    left: $grid-gap * 2;
+  }
+
+  [data-drawer="menu"] & {
+    max-height: calc(100% - #{$menuDrawerHeaderHeight});
+
+    top: $menuDrawerHeaderHeight;
+  }
+
+  [data-drawer="filter"] & {
+    max-height: calc(100% - #{$filterDrawerHeaderHeight});
+
+    top: $filterDrawerHeaderHeight;
+  }
+}
+
+
+.drawer__nav {
+  width: 100%;
+}

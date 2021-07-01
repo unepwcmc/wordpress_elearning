@@ -1,0 +1,15 @@
+@import "../../src/scss/utilities/variables";
+@import "../../src/scss/utilities/mixins";
+
+.course-embed {
+  @include ignore_restrained_width;
+  padding-bottom: 80%;
+
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  iframe {
+    @include absolute_fill;
+  }
+}

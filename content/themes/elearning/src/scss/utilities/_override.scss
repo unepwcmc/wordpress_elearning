@@ -1,0 +1,73 @@
+// WPML Language Switcher
+
+.wpml-ls-legacy-list-horizontal {
+  border: 0 !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+
+  .layout-header & {
+    display: none;
+
+    @include break-min($headerNavShow) {
+      padding-top: 5px !important;
+      padding-bottom: 15px !important;
+
+      display: block;
+    }
+  }
+
+  .header--scrolled & {
+    display: none;
+  }
+
+  ul {
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .wpml-ls-item {
+    font-size: inherit;
+    line-height: 1;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 10px !important;
+
+    display: inline-block;
+  }
+
+  a {
+    padding: 0 !important;
+    line-height: 1;
+    margin-bottom: 0;
+    //
+    // @include break-min($headerNavShow) {
+    //   margin-bottom: 15px;
+    // }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .wpml-ls-slot-shortcode_actions.wpml-ls-last-item a {
+    padding-right: 0 !important;
+  }
+
+  .wpml-ls-slot-shortcode_actions.wpml-ls-item.wpml-ls-current-language a {
+    text-decoration: underline;
+  }
+}
+
+.wpml-ls-native {
+  font-size: 14px;
+}
+
+
+.menu-item.wpml-ls-menu-item {
+  display: inline-block;
+  margin-right: $grid-gap;
+
+  &.wpml-ls-current-language .wpml-ls-native {
+    text-decoration: underline;
+  }
+}

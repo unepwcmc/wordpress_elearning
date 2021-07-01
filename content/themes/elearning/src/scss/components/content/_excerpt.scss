@@ -1,0 +1,125 @@
+.entry-excerpt {
+  margin-bottom: #{$grid-gap * 3};
+
+  position: relative;
+
+  @include break-min($sm) {
+    margin-bottom: 55px;
+  }
+}
+
+.entry-excerpt__body {
+  .layout-primary--restrained & {
+    @include restrain_width;
+  }
+}
+
+.entry-excerpt__columns {
+  @include break-min($sm) {
+    display: flex;
+  }
+}
+
+.entry-excerpt__column {
+  &:first-child {
+    @include break-min($sm) {
+      margin-right: $grid-gap;
+      width: 150px;
+
+      flex: 0 0 150px;
+    }
+    @include break-min($lg) {
+      width: 200px;
+
+      flex: 0 0 200px;
+    }
+  }
+  &:last-child {
+    @include break-min($sm) {
+      width: auto;
+
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.entry-excerpt__thumbnail {
+  margin-top: $item-padding-smaller;
+  padding-bottom: 100%;
+
+  display: none;
+
+  position: relative;
+
+  @include break-min($sm) {
+    display: block;
+  }
+
+  img {
+    @include absolute_fill;
+    @include object-fit-cover;
+  }
+}
+
+h2.entry-excerpt__title {
+  @include font_heading-4;
+  margin-bottom: $item-padding;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+p.entry-excerpt__details {
+  @include font_small_text;
+  color: $color-primary;
+  margin-bottom: #{$item-padding-small};
+  text-align: center;
+
+  .entry-excerpt--search & {
+    text-align: left;
+  }
+}
+
+.entry-excerpt__content {
+  line-height: 1.5;
+  margin-top: $item-padding;
+  margin-bottom: $item-padding;
+}
+
+a.entry-excerpt__link {
+  @include button_secondary;
+  @include button_small;
+}
+
+// a.entry-excerpt__link {
+//   font-size: 18px;
+//   font-weight: $fw-bold;
+//   line-height: 1;
+//   margin-top: $item-padding-small;
+//   margin-bottom: 0;
+//   padding-left: 30px;
+//   text-decoration: none;
+//
+//   svg {
+//     display: inline-block;
+//     width: 16px;
+//
+//     position: absolute;
+//     top: 50%;
+//     left: 0;
+//
+//     transform: translateY(-50%);
+//   }
+// }
+
+a.entry-excerpt__fauxlink {
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

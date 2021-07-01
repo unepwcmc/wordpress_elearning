@@ -1,0 +1,42 @@
+.article-related {
+  margin-top: $grid-gap * 2;
+}
+
+.article-related__header {
+  text-align: center;
+  margin-bottom: $grid-gap * 2;
+}
+
+.article-related__title {
+  @include section_title;
+}
+
+.article-related__items {
+  margin: 0;
+
+  @include break-min($sm) {
+    display: flex;
+    margin-right: -#{$grid-gap};
+  }
+}
+
+.article-related__item {
+  @include no_bullets;
+  margin-bottom: $grid-gap;
+
+  &:last-child {
+    display: none;
+  }
+
+  @include break-min($sm) {
+    display: flex;
+    width: calc(((3 / 12) * 100%) - #{$grid-gap});
+    flex: 0 0 calc(((3 / 12) * 100%) - #{$grid-gap});
+    margin-right: $grid-gap;
+    margin-bottom: 0;
+
+    &:last-child {
+      display: flex;
+    }
+  }
+}
