@@ -6,10 +6,10 @@
   */
 
   // Variables
-  $course_name = block_field( 'course-name', false );
+  $course_url = block_field( 'course-url', false );
 ?>
 
 <p>This course is <?php the_title(); ?></p>
 <div class="course-embed">
-  <iframe src="<?php echo '/content/courses/' . $course_name . '/index.html'; ?>" title="<?php the_title(); ?>"></iframe>
+  <iframe src="<?php echo $course_url; ?>" title="<?php the_title(); ?>"></iframe>
 </div>
