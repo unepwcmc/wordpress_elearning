@@ -119,16 +119,25 @@ function is_blog () {
 }
 
 /*-------------------------------------------------------------------------------------------------
+PRECONNECT GOOGLE FONTS
+------------------------------------------------------------------------------------------------- */
+
+function gg_gfonts_prefetch() {
+  echo '<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>';
+  echo '<link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>';
+ }
+ add_action( 'wp_head', 'gg_gfonts_prefetch' );
+
+/*-------------------------------------------------------------------------------------------------
 LOAD STYLES
 ------------------------------------------------------------------------------------------------- */
 
 function custom_styles(){
-    wp_enqueue_style( 'adobe_typekit', 'https://use.typekit.net/dkb3oud.css' );
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap' );
     wp_enqueue_style( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css' );
     wp_enqueue_style( 'main_css', get_stylesheet_directory_uri() . '/dist/build/css/main.css' );
     wp_enqueue_style( 'ie_css', get_stylesheet_directory_uri() . '/dist/build/css/ie.css' );
 }
-
 add_action( 'wp_enqueue_scripts', 'custom_styles' );
 
 /*-------------------------------------------------------------------------------------------------

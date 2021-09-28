@@ -60,6 +60,7 @@ h3.home-hero__text {
   @include font_heading-4;
   @include font_heading_override;
   color: currentColor;
+  font-weight: $fw-regular;
 
   @include break-min($md) {
     max-width: calc((8 / 10) * 100%);
