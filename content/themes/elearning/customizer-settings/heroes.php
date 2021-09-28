@@ -28,7 +28,7 @@ function hero_customizer_settings($wp_customize) {
     array(
       'label' => 'Default Overlay Opacity',
       'section' => 'default_hero',
-      'description' => 'From 0 to 1 in 0.1 increments (e.g., 0.4)',
+      'description' => 'Single digit number rom 0 to 9 (0 will disable overlay)',
       'settings' => 'default_hero_overlay_opacity'
     ) ) );
 
@@ -95,7 +95,7 @@ function hero_customizer_settings($wp_customize) {
     array(
       'label' => 'Overlay Opacity',
       'section' => 'courses_hero',
-      'description' => 'From 0 to 1 in 0.1 increments (e.g., 0.4)',
+      'description' => 'Single digit number rom 0 to 9 (0 will disable overlay)',
       'settings' => 'courses_hero_overlay_opacity'
     ) ) );
 
