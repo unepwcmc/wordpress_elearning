@@ -45,3 +45,10 @@
     @include object-fit-cover;
     z-index: 1;
   }
+
+  .hero-basic__overlay {
+    @include absolute_fill;
+    background-color: $color-secondary;
+
+    z-index: 2;
+  }
