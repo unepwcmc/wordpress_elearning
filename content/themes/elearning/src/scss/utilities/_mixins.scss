@@ -491,34 +491,22 @@
 
 @mixin listing_items {
   @include structural_ul;
-  margin: 0 -#{$grid-gap} -#{$spacer-medium} 0;
+  display: grid;
+  grid-template-columns: 1;
+  grid-gap: $spacer-medium $grid-gap;
 
-  display: flex;
-  flex-wrap: wrap;
+  @include break-min($sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-  @include break-min($xs) {
-    margin-right: -#{$grid-gap};
+  @include break-min($md) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @mixin listing_item {
   @include no_bullets;
-  margin-right: $grid-gap;
-  margin-bottom: $spacer-medium;
-  width: 100%;
-
-  @include break-min($sm) {
-    width: calc(((1 / 2) * 100%) - #{$grid-gap});
-
-    display: flex;
-    flex: 0 0 calc(((1 / 2) * 100%) - #{$grid-gap});
-  }
-
-  @include break-min($md) {
-    width: calc(((1 / 3) * 100%) - #{$grid-gap});
-
-    flex: 0 0 calc(((1 / 3) * 100%) - #{$grid-gap});
-  }
+  display: flex;
 }
 
 //-------------------------------------------------

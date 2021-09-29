@@ -1,6 +1,18 @@
+.listing {
+  .home & {
+    @include spacer;
+  }
+}
+
+.listing__inner {
+  .home & {
+    @include inner;
+  }
+}
+
 .listing__header {
-  padding-top: $spacer-small;
-  padding-bottom: $spacer-small;
+  margin-top: $spacer-small;
+  margin-bottom: $spacer-small;
   width: 100%;
 
   display: flex;

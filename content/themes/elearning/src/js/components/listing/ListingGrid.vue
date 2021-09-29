@@ -3,83 +3,78 @@
     class="listing"
     :class="`listing--${postType}`"
   >
-    <div class="listing__header">
-      <p
-        v-if="!isFetching"
-        class="listing__text"
-        v-html="$t('listing.count_text', {
-          posts_length: posts.length,
-          max_posts: maxPosts
-        })"
-      />
-
-      <div class="listing__filters">
-        <button
-        v-if="activeTermsCount !== 0"
-        class="listing_text-button"
-        @click="clearActiveTerms"
-        >
-          {{ viewAllText }}
-        </button>
-
-        <listing-drawer
-          v-if="filters.length"
-          v-bind="{
-            activeTermsCount,
-            filters
-          }"
-          @filterSelected="onFilterSelected()"
-        />
-      </div>
-    </div>
-
-    <div class="listing__body">
-      <div
-        v-if="posts.length"
-        class="listing__content"
-      >
-        <listing-cards
-          :modal="this.modal"
-          :posts="posts"
-          :post-type="postSingular"
-          @onCardClicked="updateActivePost"
-        />
-
-        <observer v-on:intersect="intersected" />
-      </div>
-
-      <div
-        v-else
-        class="listing__content listing__content--empty"
-      >
+    <div class="listing__inner">
+      <div class="listing__header">
         <p
           v-if="!isFetching"
-          class="listing___empty-message"
+          class="listing__text"
+          v-html="$t('listing.count_text', {
+            posts_length: posts.length,
+            max_posts: maxPosts
+          })"
+        />
+
+        <div class="listing__filters">
+          <button
+          v-if="activeTermsCount !== 0"
+          class="listing_text-button"
+          @click="clearActiveTerms"
+          >
+            {{ viewAllText }}
+          </button>
+
+          <listing-drawer
+            v-if="filters.length"
+            v-bind="{
+              activeTermsCount,
+              filters
+            }"
+            @filterSelected="onFilterSelected()"
+          />
+        </div>
+      </div>
+
+      <div class="listing__body">
+        <div
+          v-if="posts.length"
+          class="listing__content"
         >
-          {{ $t('common.no_results_found') }}
-        </p>
-      </div>
+          <listing-cards
+            :modal="this.modal"
+            :posts="posts"
+            :post-type="postSingular"
+            @onCardClicked="updateActivePost"
+          />
 
-      <div
-        v-if="isFetching"
-        class="listing__loader"
-      >
-        <Loader />
-      </div>
+          <observer v-on:intersect="intersected" />
+        </div>
 
-      <listing-modal
-        v-if="modal"
-        v-bind="{ post: activePost }"
-      />
+        <div
+          v-else
+          class="listing__content listing__content--empty"
+        >
+          <p
+            v-if="!isFetching"
+            class="listing___empty-message"
+          >
+            {{ $t('common.no_results_found') }}
+          </p>
+        </div>
+
+        <div
+          v-if="isFetching"
+          class="listing__loader"
+        >
+          <Loader />
+        </div>
+
+        <listing-modal
+          v-if="modal"
+          v-bind="{ post: activePost }"
+        />
+      </div>
     </div>
   </div>
-
-  <!-- <div
-    v-else
-    class="listing__loader listing__loader--padded"
-  >
-    <Loader />
-  </div> -->
 </template>
 
 <script>
