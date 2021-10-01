@@ -22,8 +22,6 @@
 }
 
 .home-hero__body {
-  min-height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,8 +35,8 @@
   z-index: 2;
 
   @include break-min($md) {
-    padding-top: 180px;
-    padding-bottom: 180px;
+    padding-top: $spacer-xlarge * 1.5;
+    padding-bottom: $spacer-xlarge * 1.5;
   }
 
   .home-hero--dark & {
@@ -50,6 +48,7 @@ h2.home-hero__title {
   @include font_heading-1;
   color: currentColor;
   font-weight: $fw-regular;
+  text-transform: uppercase;
 
   @include break-min($md) {
     max-width: calc((8 / 10) * 100%);
@@ -57,12 +56,27 @@ h2.home-hero__title {
 }
 
 h3.home-hero__text {
-  @include font_heading-4;
+  @include font_heading-3;
   @include font_heading_override;
   color: currentColor;
-  font-weight: $fw-regular;
 
   @include break-min($md) {
     max-width: calc((8 / 10) * 100%);
+  }
+}
+
+a.home-hero__link {
+  @include button_ghost;
+  margin: 0;
+
+  &.home-hero__link--external {
+    display: inline-flex;
+    justify-content: center;
+
+    svg {
+      color: $color-white;
+      margin-left: 10px;
+      width: 14px;
+    }
   }
 }
