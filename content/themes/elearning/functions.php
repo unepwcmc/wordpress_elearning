@@ -133,7 +133,7 @@ LOAD STYLES
 ------------------------------------------------------------------------------------------------- */
 
 function custom_styles(){
-    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap' );
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap' );
     wp_enqueue_style( 'flickity', 'https://unpkg.com/flickity@2/dist/flickity.min.css' );
     wp_enqueue_style( 'main_css', get_stylesheet_directory_uri() . '/dist/build/css/main.css' );
     wp_enqueue_style( 'ie_css', get_stylesheet_directory_uri() . '/dist/build/css/ie.css' );
@@ -391,6 +391,26 @@ function get_wpml_translations_json() {
         },
         icl_get_string_translations()
       )
+    )
+  );
+}
+
+/*-------------------------------------------------------------------------------------------------
+ADD COURSE STEPS TO REST API
+------------------------------------------------------------------------------------------------- */
+add_action( 'rest_api_init', 'add_course_steps_count_to_rest_api' );
+function add_course_steps_count_to_rest_api() {
+  //Add featured image
+  register_rest_field(
+    'sfwd-courses', // Where to add the field (Here, blog posts. Could be an array)
+    'course_steps_count', // Name of new field (You can call this anything)
+    array (
+      'get_callback'    => function( $course_arr ) {
+        $course_steps = learndash_get_course_steps_count( $course_arr['id'] );
+        return (int) $course_steps;
+      },
+      'update_callback' => null,
+      'schema'          => null
     )
   );
 }

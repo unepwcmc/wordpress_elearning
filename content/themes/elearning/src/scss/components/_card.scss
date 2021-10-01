@@ -7,25 +7,6 @@
   background-color: $color-light-grey;
 }
 
-.card__badge {
-  position: absolute;
-  top: #{$grid-gap / 2};
-  left: #{$grid-gap / 2};
-  z-index: 1;
-  font-size: 16px;
-  background-color: $color-grey-text;
-  color: #fff;
-  border: 1px solid #fff;
-  border-radius: 3px;
-  padding: 2px 4px;
-  margin-right: #{$grid-gap / 2};
-  font-weight: 500;
-  line-height: 1;
-  @include break-min($sm) {
-    font-size: 11px;
-  }
-}
-
 .card__image {
   position: relative;
   padding-bottom: calc((19 / 29) * 100%);

@@ -1,0 +1,175 @@
+.card-course__card {
+  background-color: $color-light-grey;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+}
+
+.card-course__body {
+  flex: 1;
+}
+
+.card-course__columns {
+  @include break-min($xs) {
+    display: flex;
+  }
+}
+
+.card-course__column {
+  @include break-min($xs) {
+    width: calc((8 / 12) * 100%);
+
+    flex: 0 0 calc((8 / 12) * 100%);
+
+    &:first-child {
+      width: calc((4 / 12) * 100%);
+
+      flex: 0 0 calc((4 / 12) * 100%);
+    }
+  }
+
+  @include break-min($md) {
+    width: calc((6 / 12) * 100%);
+
+    flex: 0 0 calc((6 / 12) * 100%);
+
+    &:first-child {
+      width: calc((6 / 12) * 100%);
+
+      flex: 0 0 calc((6 / 12) * 100%);
+    }
+  }
+
+  @include break-min($lg) {
+    width: calc((8 / 12) * 100%);
+
+    flex: 0 0 calc((8 / 12) * 100%);
+
+    &:first-child {
+      width: calc((4 / 12) * 100%);
+
+      flex: 0 0 calc((4 / 12) * 100%);
+    }
+  }
+}
+
+.card-course__image-wrap {
+  overflow: hidden;
+  padding-bottom: 50%;
+
+  position: relative;
+
+  @include break-min($xs) {
+    padding-bottom: 100%;
+  }
+}
+
+.card-course__image,
+.block-editor__container .card-course__image {
+  @include absolute_fill;
+  @include object_fit_cover;
+  transition: transform .8s ease;
+  will-change: transform;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-course__card:hover & {
+    transform: scale(1.015);
+  }
+}
+
+.card-course__content {
+  padding: $item-padding;
+  padding-right: $spacer-medium;
+  width: 100%;
+
+  @include break-min($lg) {
+    padding-right: $spacer-xlarge;
+  }
+}
+
+p.card-course__date {
+  @include font_small_text;
+  color: $color-dark-grey;
+  margin-bottom: $item-padding-small;
+}
+
+h4.card-course__title {
+  @include font_heading-3;
+  margin-bottom: $item-padding-small;
+}
+
+p.card-course__detail {
+  @include font_small_text;
+  margin-bottom: $item-padding-small;
+  padding-left: 25px;
+  text-transform: uppercase;
+
+  position: relative;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.card-course__footer {
+  background-color: $color-mid-grey;
+  padding: $item-padding-small;
+  padding-right: $spacer-medium;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include break-min($lg) {
+    padding-right: $spacer-xlarge;
+  }
+}
+
+p.card-course__status {
+  @include font_small_text;
+  border-right: 1px solid $color-border;
+  font-weight: $fw-bold;
+  margin-bottom: 0;
+  padding-right: $item-padding;
+  text-align: center;
+}
+
+span.card-course__status-indicator {
+  @include font_small_text;
+  border-radius: 25px;
+  font-weight: $fw-bold;
+  min-width: 110px;
+  margin-top: $item-padding-smaller;
+  padding: 12px;
+  text-align: center;
+
+  display: block;
+
+  .card-course__status--not_started & {
+    background-color: $color-course-not-started;;
+  }
+
+  .card-course__status--in_progress & {
+    background-color: $color-course-in-progress;
+  }
+}
+
+a.card-course__link {
+  @include button_arrow;
+}

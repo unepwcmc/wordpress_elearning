@@ -64,7 +64,6 @@ h2.home-hero__title {
 
 h3.home-hero__text {
   @include font_heading-3;
-  @include font_heading_override;
   color: currentColor;
 
   @include break-min($md) {

@@ -6,7 +6,7 @@
   >
     <div
       v-if="!isResource"
-      class="card-listing__header"
+      class="card-listing__body"
     >
       <div class="card-listing__image-wrap">
         <img
@@ -15,31 +15,29 @@
           :alt="title"
         >
       </div>
-    </div>
-    <div class="card-listing__body">
-      <p
-        v-if="hasDate"
-        class="card-listing__date"
-      >
-        {{ date }}
-      </p>
-      <ul
-        v-if="isResource"
-        class="card-listing__details-items"
-      >
-        <li
-          v-if="resourceType"
-          class="card-listing__details-item"
+      <div class="card-listing__content">
+        <p
+          class="card-listing__date"
         >
-          {{ $t(`resources.${resourceType}`) }}
-        </li>
-        <li class="card-listing__details-item">
-          {{ $t('resources.resource') }}
-        </li>
-      </ul>
-      <h3 class="card-listing__title">
-        {{ title }}
-      </h3>
+          {{ date }}
+        </p>
+        <h3 class="card-listing__title">
+          {{ title }}
+        </h3>
+        <p>
+          <span v-if="config.course_price">
+            {{ config.course_price }}
+          </span>
+          <span v-else>
+            {{ config.course_price_type }}
+          </span>
+        </p>
+        <p>
+          {{ config.course_steps_count }}
+        </p>
+      </div>
+    </div>
+    <div class="card-listing__footer">
     </div>
     <a
       v-if="!modal || (modal && externalLinkURL)"
@@ -85,13 +83,7 @@
 
     computed: {
       date() {
-        if (this.postType === 'event') {
-          return this.config.acf && moment(this.config.acf.date_start).format('D MMMM YYYY')
-        } else {
-          return this.config.ACF && this.config.ACF.date
-            ? this.config.ACF.date
-            : moment(this.config.date).format('D MMMM YYYY')
-        }
+        return moment(this.config.date).format('D MMMM YYYY')
       },
 
       externalLinkURL() {

@@ -33,10 +33,59 @@
 			<section class="layout-primary">
 				<div class="layout-primary__body layout-primary__body--archive">
 
-					<listing-grid
-						locale="<?php echo ICL_LANGUAGE_CODE; ?>"
-						post-type="<?php echo $post_type; ?>"
-					/>
+					<?php if ( have_posts() ) : ?>
+
+					<div class="listing">
+				    <div class="listing__inner">
+				      <div class="listing__header">
+				        <!-- <p
+				          v-if="!isFetching"
+				          class="listing__text"
+				          v-html="$t('listing.count_text', {
+				            posts_length: posts.length,
+				            max_posts: maxPosts
+				          })"
+				        /> -->
+				      </div>
+
+				      <div class="listing__body">
+				        <div class="listing__content">
+									<ul class="listing__items">
+										<?php while ( have_posts() ) : the_post();
+									/*
+									* Include the Post-Format-specific template for the content.
+									* If you want to override this in a child theme, then include a file
+									* called content-___.php (where ___ is the Post Format name) and that will be used instead.
+									*/ ?>
+									    <li class="listing__item">
+						          <!-- <listing-cards
+						            :modal="this.modal"
+						            :posts="posts"
+						            :post-type="postSingular"
+						            @onCardClicked="updateActivePost"
+						          /> -->
+												<?php get_template_part( 'template-parts/components/cards/card', 'course' ); ?>
+											</li>
+										<?php endwhile; ?>
+									</ul>
+				        </div>
+
+				        <div
+				          v-else
+				          class="listing__content listing__content--empty"
+				        >
+				          <p
+				            v-if="!isFetching"
+				            class="listing___empty-message"
+				          >
+				            {{ $t('common.no_results_found') }}
+				          </p>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+
+					<?php pagination_bar(); endif; ?>
 
 				</div>
 			</section>

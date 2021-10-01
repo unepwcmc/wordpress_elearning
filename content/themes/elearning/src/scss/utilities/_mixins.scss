@@ -177,17 +177,12 @@
 @mixin heading {
   color: $color-headings;
   letter-spacing: 1px;
-  font-family: $font-heading;
-  font-weight: $fw-bold;
+  font-weight: $fw-black;
   margin-bottom: $item-padding;
 }
 
-@mixin font_heading_override {
-  letter-spacing: 0;
-  font-family: $font-body;
-}
-
 @mixin font_heading-1 {
+  font-family: $font-heading;
   font-size: 40px;
   line-height: 48px;
 
@@ -198,6 +193,7 @@
 }
 
 @mixin font_heading-2 {
+  font-family: $font-heading;
   font-size: 34px;
   line-height: 40px;
 
@@ -453,9 +449,8 @@
 }
 
 @mixin button_arrow {
-  font-size: 14px;
+  @include font_small_text;
   font-weight: $fw-bold;
-  line-height: 25px;
   padding-right: 22px;
   text-decoration: none;
   text-transform: uppercase;
@@ -493,14 +488,10 @@
   @include structural_ul;
   display: grid;
   grid-template-columns: 1;
-  grid-gap: $spacer-medium $grid-gap;
-
-  @include break-min($sm) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  grid-gap: $grid-gap;
 
   @include break-min($md) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
