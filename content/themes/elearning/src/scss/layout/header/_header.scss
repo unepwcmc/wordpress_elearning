@@ -1,6 +1,6 @@
 .header {
-  background-color: $color-header;
   color: $color-white;
+  border-top: 3px solid $color-primary;
 
   position: fixed;
   top: 0;
@@ -54,58 +54,29 @@
 }
 
 .header__item--logo {
-  width: 140px;
-
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 0 0 140px;
-
-  position: relative;
-
-  transition: color .3s ease, flex-basis .3s ease, width .3s ease;
-
-  @include break-min($headerNavShow) {
-    width: 260px;
-
-    flex: 0 0 260px;
-  }
-
-  .header--scrolled & {
-    // color: $color-primary;
-    // width: 32px;
-    //
-    // flex-basis: 32px;
-    //
-    @include break-min($headerNavShow) {
-      width: 165px;
-
-      flex-basis: 165px;
-    }
-  }
+  flex: 0 0 auto;
+  align-items: center;
 }
+//   width: 130px;
+//
+//   flex-direction: column;
+//   justify-content: center;
+//
+//   position: relative;
 
-.header__title {
-  @include screen_reader_only;
+h1.header__title {
+  @include font_heading-3;
+  color: currentColor;
+  margin-left: $grid-gap;
+  margin-bottom: 0;
 }
 
 a.header__logo {
+  margin-top: 2px;
   display: block;
 
-  position: absolute;
-  top: -10px;
-  right: 0;
-  left: 0;
-  width: 100%;
-
-  // .header & {
-  //   height: $headerHeight;
-  //   will-change: height;
-  // }
-  //
-  // .header--scrolled & {
-  //   height: $headerHeightScrolled;
-  // }
+  width: 130px;
 }
 
 .header__item--nav {

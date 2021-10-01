@@ -29,13 +29,13 @@
 
 .home-hero__content {
   color: $color-white;
-  padding-top: 48px;
+  padding-top: 48px + $headerMobileHeight;
   padding-bottom: 48px;
 
   z-index: 2;
 
   @include break-min($md) {
-    padding-top: $spacer-xlarge * 1.5;
+    padding-top: $spacer-xlarge * 1.5 + $headerHeight;
     padding-bottom: $spacer-xlarge * 1.5;
   }
 
