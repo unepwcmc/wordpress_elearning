@@ -204,8 +204,8 @@
 }
 
 @mixin font_heading-3 {
-  font-size: 28px;
-  line-height: 32px;
+  font-size: 18px;
+  line-height: 20px;
 
   @include break-min($sm) {
     font-size: 20px;
