@@ -22,7 +22,6 @@
 	set_query_var( 'hero-link-url', $hero_link );
 	set_query_var( 'hero-link-text', get_theme_mod( 'courses_hero_button_text' ) );
 	set_query_var( 'hero-background-image', get_theme_mod( 'courses_hero_image') );
-	set_query_var( 'hero-opacity', get_theme_mod( 'courses_hero_overlay_opacity' ) );
 
 	get_template_part( 'template-parts/components/heroes/hero', 'page' );
 

@@ -1,6 +1,7 @@
 .hero-basic {
     background-color: $color-secondary;
     overflow: hidden;
+    padding-top: $headerMobileHeight;
     min-height: 320px;
 
     display: flex;
@@ -9,10 +10,7 @@
 
     @include break-min($sm) {
       min-height: 360px;
-    }
-
-    @include break-min($md) {
-      min-height: 530px;
+      padding-top: $headerHeight;
     }
   }
 
@@ -48,7 +46,7 @@
 
   .hero-basic__overlay {
     @include absolute_fill;
-    background-color: $color-secondary;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.69) 0%, rgba(10, 10, 10, 0) 100%);
 
     z-index: 2;
   }

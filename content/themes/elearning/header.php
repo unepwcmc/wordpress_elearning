@@ -39,7 +39,12 @@
           <div class="header__item header__item--logo">
             <!-- Site Name & Logo  -->
             <?php get_template_part( 'template-parts/header/logo' ); ?>
-            <h1 class="header__title"><?php wp_title( '|', true, 'right' ); ?><?php bloginfo( 'name' ); ?></h1>
+            <h1 class="header__title">
+              <span class="utility__screen-reader-only">
+                <?php wp_title( '|', true, 'right' ); ?>
+              </span>
+              <?php bloginfo( 'name' ); ?>
+            </h1>
           </div>
 
           <div class="header__item header__item--nav">
