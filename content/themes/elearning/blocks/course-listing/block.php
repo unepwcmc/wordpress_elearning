@@ -1,6 +1,6 @@
 <?php
   /*
-    Course Embed Block
+    Course Listing Block
     Created by UNEP-WCMC
     With Genesis Custom Blocks for Gutenberg - https://getblocklab.com/
   */
