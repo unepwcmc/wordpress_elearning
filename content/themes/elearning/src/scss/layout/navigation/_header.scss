@@ -24,11 +24,6 @@
       transition: padding .3s ease;
       will-change: padding;
 
-      .header--scrolled & {
-        padding-top: 7.5px;
-        padding-bottom: 7.5px;
-      }
-
       &:hover a::before {
         transform: scaleX(1);
         transform-origin: bottom left;

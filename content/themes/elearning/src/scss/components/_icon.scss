@@ -1,10 +1,9 @@
 .icon__logo {
   background-color: $color-primary;
   padding: 20px 16px;
+}
 
-  will-change: padding;
-  transition: padding .3s ease;
-
-  .header--scrolled & {
-  }
+.icon__account {
+  width: 35px;
+  height: 35px;
 }

@@ -2,7 +2,7 @@
   color: $color-white;
   border-top: 3px solid $color-primary;
 
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -34,18 +34,8 @@
 
   display: flex;
 
-  transition: height .3s ease;
-
-  .header--scrolled & {
-    height: $headerMobileHeightScrolled;
-  }
-
   @include break-min($headerNavShow) {
     height: $headerHeight;
-
-    .header--scrolled & {
-      height: $headerHeightScrolled;
-    }
   }
 }
 
@@ -58,12 +48,6 @@
   flex: 0 0 auto;
   align-items: center;
 }
-//   width: 130px;
-//
-//   flex-direction: column;
-//   justify-content: center;
-//
-//   position: relative;
 
 h1.header__title {
   @include font_heading-3;

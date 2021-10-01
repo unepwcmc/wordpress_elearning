@@ -18,7 +18,6 @@
 
   $dark_text = block_field( 'dark-text', false );
   $background_colour = block_field( 'background-colour', false );
-  $opacity = block_field( 'opacity', false ) * 0.1;
 ?>
 
   <div
@@ -56,8 +55,8 @@
       <img
         src="<?php echo $image_url; ?>"
         alt="<?php echo $title; ?>"
-        style="opacity: <?php echo $opacity; ?>"
         class="home-hero__background-image"
       >
+      <div class="home-hero__overlay"></div>
     <?php endif; ?>
   </div>

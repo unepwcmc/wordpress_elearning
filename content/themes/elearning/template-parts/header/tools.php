@@ -1,8 +1,13 @@
 <div class="header-tools">
   <div class="header-tools__items">
 
-    <div class="header-tools__item header-tools__item--search">
-      <header-search form-action="<?php echo esc_url( home_url( '/' ) ); ?>" />
+    <div class="header-tools__item header-tools__item--account">
+      <a
+        href="/my-profile"
+        class="header-tools__account"
+      >
+        <?php get_template_part( 'template-parts/icons/icon', 'account' ); ?>
+      </a>
     </div>
 
     <?php

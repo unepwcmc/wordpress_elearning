@@ -2,7 +2,7 @@
   display: flex;
 
   @include break-min($md) {
-    margin-left: 15px;
+    margin-left: 30px;
   }
 }
 
@@ -13,13 +13,9 @@
 }
 
 .header-tools__item {
-  margin-left: 30px;
+  margin-left: 20px;
 
   flex: 0 0 auto;
-
-  @include break-min($md) {
-    margin-left: 20px;
-  }
 
   &:first-child {
     margin-left: 0;
@@ -61,6 +57,15 @@ a.header-tools__button {
   }
 }
 
+.header-tools__account {
+  display: block;
+  transition: opacity 0.5s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
 .header-tools__item--menu-toggle {
   @include break-min($headerNavShow) {
     display: none;
@@ -80,8 +85,4 @@ a.header-tools__button {
   height: 32px;
 
   display: block;
-
-  .header--scrolled & {
-    color: $color-tools-icons;
-  }
 }
