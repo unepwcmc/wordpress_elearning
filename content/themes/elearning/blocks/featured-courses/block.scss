@@ -21,13 +21,23 @@ h3.featured-courses__title {
 
 ul.featured-courses__items {
   @include structural_ul;
-  display: flex;
-  justify-content: space-between;
+
+  @include break-min($xs) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .featured-courses__item {
   display: flex;
-  flex: 0 0 calc(50% - #{$grid-gap / 2});
+  margin-bottom: $item-padding;
+
+  @include break-min($xs) {
+    margin-bottom: 0;
+    width: calc(50% - #{$grid-gap / 2});
+
+    flex: 0 0 calc(50% - #{$grid-gap / 2});
+  }
 }
 
 .featured-course__card {

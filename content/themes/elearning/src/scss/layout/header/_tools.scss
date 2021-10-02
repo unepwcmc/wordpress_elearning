@@ -58,8 +58,12 @@ a.header-tools__button {
 }
 
 .header-tools__account {
-  display: block;
+  display: none;
   transition: opacity 0.5s ease;
+
+  @include break-min($xxs) {
+    display: block;
+  }
 
   &:hover {
     opacity: 0.8;
