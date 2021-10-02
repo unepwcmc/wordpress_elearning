@@ -31,13 +31,15 @@
 								<ul class="footer__items">
 									<li class="footer__item">
 										<?php get_template_part( 'template-parts/global/logo' ); ?>
-										<?php get_template_part( 'template-parts/social/icon-links' ); ?>
 									</li>
 									<li class="footer__item">
 										<!-- Footer Navigation -->
 										<?php if ( has_nav_menu( 'footer' ) ) : ?>
 											<?php get_template_part( 'template-parts/navigation/navigation', 'footer' ); ?>
 										<?php endif; ?>
+									</li>
+									<li class="footer__item">
+										<?php get_template_part( 'template-parts/footer/site-info' ); ?>
 									</li>
 								</ul>
 							</div>

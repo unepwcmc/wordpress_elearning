@@ -52,7 +52,7 @@ require_once( 'customizer-settings/blog-posts.php' );
 	Social Media Links
 -------------------------------------------------------------------------------*/
 
-require_once( 'customizer-settings/social-media-links.php' );
+// require_once( 'customizer-settings/social-media-links.php' );
 
 /*-------------------------------------------------------------------------------
   Default Hero Customiser Settings
