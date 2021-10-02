@@ -25,6 +25,7 @@
             <?php
               $post = block_sub_value( 'course' );
               $post_meta = get_post_meta($post->ID);
+              $post_url = get_the_permalink($post->ID);
               $course_steps = intval($post_meta['_ld_course_steps_count'][0]);
               $lessons_text = $course_steps > 1 ? 'lessons' : 'lesson';
 
@@ -43,11 +44,13 @@
               <article class="featured-course__card">
                 <div class="featured-course__columns">
                   <div class="featured-course__column">
-                    <img
-                      src="<?php echo $image_url; ?>"
-                      alt="<?php echo $post->post_title; ?>"
-                      class="featured-course__image"
-                    >
+                    <div class="featured-course__image-wrap">
+                      <img
+                        src="<?php echo $image_url; ?>"
+                        alt="<?php echo $post->post_title; ?>"
+                        class="featured-course__image"
+                      >
+                    </div>
                   </div>
                   <div class="featured-course__column">
                     <div class="featured-course__content">
@@ -71,6 +74,12 @@
                     </div>
                   </div>
                 </div>
+                <a
+                  href="<?php echo $post_url; ?>"
+                  class="featured-course__fauxlink"
+                >
+                  <?php _e( 'View course', 'wcmc' ); ?>
+                </a>
               </article>
 
             </li>
