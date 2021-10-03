@@ -38,7 +38,7 @@
               $image_id = $post_meta['_thumbnail_id'][0];
               $image_url = wp_get_attachment_image_src($image_id, 'full-size')[0];
             ?>
-            <!-- <?php var_dump(highlight_string("<?\n". var_export($post_meta, true))); ?> -->
+            <?php var_dump(highlight_string("<?\n". var_export($post_meta, true))); ?>
             <li class="featured-courses__item">
 
               <article class="featured-course__card">
