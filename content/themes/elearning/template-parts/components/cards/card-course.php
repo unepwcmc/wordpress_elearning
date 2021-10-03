@@ -6,7 +6,7 @@
   $course_step_count = learndash_get_course_steps_count($course_id);
 
   $course_price = $course_price_data['price']
-    ? '£' . $course_price_data['price']
+    ? get_price_with_currency_symbol($course_price_data['price'])
     : __( 'Free', 'wcmc' );
 
   $thumbnail_url = get_the_post_thumbnail_url() != '' ? get_the_post_thumbnail_url() : get_stylesheet_directory_uri() . '/inc/img/card-placeholder.jpg';

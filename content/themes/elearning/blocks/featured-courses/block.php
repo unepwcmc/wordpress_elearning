@@ -64,7 +64,11 @@
 
                       <p class="featured-course__detail">
                         <?php get_template_part( 'template-parts/icons/icon', 'money' ); ?>
-                        <?php echo $course_price['type'] === 'free' || $course_price['type'] === 'open' ? 'Free' : '&#163;' . $course_price['value']; ?>
+                        <?php
+                          echo $course_price['type'] === 'free' || $course_price['type'] === 'open'
+                            ? 'Free'
+                            : get_price_with_currency_symbol($course_price['value']);
+                        ?>
                       </p>
 
                       <p class="featured-course__detail">
