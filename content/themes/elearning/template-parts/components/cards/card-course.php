@@ -1,9 +1,13 @@
 <?php
   $course_id = get_the_id();
-  $course_price = learndash_get_course_price($course_id);
+  $course_price_data = learndash_get_course_price($course_id);
   $course_status_indicator = learndash_course_status($course_id, get_current_user_id(), true);
   $course_status = $course_status_indicator != '' ? $course_status_indicator : 'not_started';
   $course_step_count = learndash_get_course_steps_count($course_id);
+
+  $course_price = $course_price_data['price']
+    ? '£' . $course_price_data['price']
+    : __( 'Free', 'wcmc' );
 
   $thumbnail_url = get_the_post_thumbnail_url() != '' ? get_the_post_thumbnail_url() : get_stylesheet_directory_uri() . '/inc/img/card-placeholder.jpg';
 ?>
@@ -34,11 +38,7 @@
 
           <p class="card-course__detail">
             <?php get_template_part( 'template-parts/icons/icon', 'money' ); ?>
-            <?php if ($course_price['price']) : ?>
-              <?php echo '£' . $course_price['price']; ?>
-            <?php else : ?>
-              <?php echo $course_price['type']; ?>
-            <?php endif; ?>
+            <?php echo $course_price; ?>
           </p>
 
           <p class="card-course__detail">
