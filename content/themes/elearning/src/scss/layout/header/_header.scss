@@ -57,6 +57,7 @@
 h1.header__title {
   @include font_heading-3;
   color: currentColor;
+  font-family: $font-body;
   margin-left: $grid-gap;
   margin-bottom: 0;
 }
