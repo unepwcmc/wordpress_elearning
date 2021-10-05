@@ -10,6 +10,10 @@
 
   transition: color .3s ease, background-color .3s ease;
 
+  .single-sfwd-lessons & {
+    color: $color-secondary;
+  }
+
   .logged-in.admin-bar & {
     top: 46px;
 
@@ -47,6 +51,7 @@
   display: flex;
   flex: 0 0 auto;
   align-items: center;
+  margin-right: auto;
 }
 
 h1.header__title {
@@ -71,24 +76,14 @@ a.header__logo {
   @include break-min($md) {
     flex-wrap: wrap;
   }
+
+  .single & {
+    display: none;
+  }
 }
 
 .header__item--tools {
   display: flex;
   justify-content: flex-end;
   flex: 0 0 auto;
-
-  &.header__item--language-switcher {
-    @include break-min($headerNavShow) {
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: flex-start;
-
-      .header--scrolled & {
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-      }
-    }
-  }
 }

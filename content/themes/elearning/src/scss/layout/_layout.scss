@@ -1,3 +1,19 @@
+.layout-main {
+  min-height: calc(100vh - #{$footerHeight});
+
+  .logged-in.admin-bar & {
+    min-height: calc(100vh - #{$footerHeight} - 46px);
+
+    @include break-min(783px) {
+      min-height: calc(100vh - #{$footerHeight} - 64px);
+    }
+
+    @include break-min($headerNavShow) {
+      min-height: calc(100vh - #{$footerHeight} - 32px);
+    }
+  }
+}
+
 .layout-container {
   overflow: hidden;
 

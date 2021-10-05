@@ -1,73 +1,30 @@
-// WPML Language Switcher
+// Learndash
 
-.wpml-ls-legacy-list-horizontal {
-  border: 0 !important;
-  line-height: 1 !important;
-  padding: 0 !important;
-
-  .layout-header & {
-    display: none;
-
-    @include break-min($headerNavShow) {
-      padding-top: 5px !important;
-      padding-bottom: 15px !important;
-
-      display: block;
-    }
-  }
-
-  .header--scrolled & {
-    display: none;
-  }
-
-  ul {
-    font-size: 14px;
-    line-height: 1;
-  }
-
-  .wpml-ls-item {
-    font-size: inherit;
-    line-height: 1;
-    list-style-type: none;
-    margin: 0;
-    padding: 0 0 0 10px !important;
-
-    display: inline-block;
-  }
-
-  a {
-    padding: 0 !important;
-    line-height: 1;
-    margin-bottom: 0;
-    //
-    // @include break-min($headerNavShow) {
-    //   margin-bottom: 15px;
-    // }
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .wpml-ls-slot-shortcode_actions.wpml-ls-last-item a {
-    padding-right: 0 !important;
-  }
-
-  .wpml-ls-slot-shortcode_actions.wpml-ls-item.wpml-ls-current-language a {
-    text-decoration: underline;
-  }
+.single-sfwd-lessons .learndash-wrapper .ld-content-actions .ld-content-action .ld-course-step-back,
+.single-sfwd-topic .learndash-wrapper .ld-content-actions .ld-content-action .ld-course-step-back {
+  display: none;
 }
 
-.wpml-ls-native {
-  font-size: 14px;
+.single-sfwd-courses .learndash-wrapper .ld-course-status,
+.single-sfwd-lessons .learndash-wrapper .ld-lesson-status,
+.single-sfwd-topic .learndash-wrapper .ld-topic-status {
+  display: none;
 }
 
+.learndash-wrapper .ld-item-list .ld-section-heading {
+  display: none;
+}
 
-.menu-item.wpml-ls-menu-item {
-  display: inline-block;
-  margin-right: $grid-gap;
+.ld-content-action.ld-empty {
+  min-width: 140px;
+}
 
-  &.wpml-ls-current-language .wpml-ls-native {
-    text-decoration: underline;
+@media (max-width: 640px) {
+  .learndash-wrapper .ld-button {
+    margin-left: 0;
+  }
+
+  .learndash-wrapper .ld-content-actions .ld-content-action.ld-empty {
+    padding: 0;
   }
 }

@@ -4,47 +4,22 @@
 
 .entry__header {
   margin-bottom: $spacer-small;
-
-  .layout-primary--restrained & {
-    @include restrain_width;
-  }
 }
 
-a.entry__header-link {
+p.entry__breadcrumb {
   @include font_small_text;
-  text-decoration: none;
-  margin-bottom: $item-padding;
-  padding-left: 30px;
+  font-weight: $fw-black;
+  text-transform: uppercase;
 
-  display: block;
-
-  @include break-min($lg) {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  svg {
-    color: $color-primary;
-    width: 25px;
-
-    position: absolute;
-    top: 50%;
-    left: 0;
-
-    transform: translateY(-50%);
-    transition: transform .3s ease;
-    will-change: transform;
-  }
-
-  &:hover svg {
-    transform: translate(-2px, -50%);
+  a {
+    color: currentColor;
+    text-decoration: none;
   }
 }
 
 h2.entry__title {
-  @include font_heading-3;
-  font-weight: $fw-light;
+  @include font_heading-1;
+  font-family: $font-body;
   margin-bottom: $item-padding * 2;
 }
 

@@ -8,6 +8,9 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry richtext' ); ?>>
 	<div class="entry__header">
+		<p class="entry__breadcrumb">
+			<a href="/courses">All Courses</a> | <?php echo get_the_title(); ?>
+		</p>
 		<h2 class="entry__title"><?php the_title(); ?></h2>
 	</div><!-- .entry-header -->
 	<div class="entry__body">

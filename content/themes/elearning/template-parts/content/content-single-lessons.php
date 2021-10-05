@@ -4,10 +4,16 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  */
+
+ $parent_course_id = learndash_get_setting( $post, 'course' );
+ $parent_course = get_post( $parent_course_id );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry richtext' ); ?>>
 	<div class="entry__header">
+		<p class="entry__breadcrumb">
+			<a href="<?php echo get_permalink( $parent_course ); ?>">All Lessons</a> | <?php echo get_the_title(); ?>
+		</p>
 		<h2 class="entry__title"><?php the_title(); ?></h2>
 	</div><!-- .entry-header -->
 	<div class="entry__body">
