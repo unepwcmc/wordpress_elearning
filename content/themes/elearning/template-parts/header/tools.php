@@ -2,14 +2,7 @@
   <div class="header-tools__items">
 
     <!-- Links to users account page -->
-    <div class="header-tools__item header-tools__item--account">
-      <a
-        href="/my-profile"
-        class="header-tools__account"
-      >
-        <?php get_template_part( 'template-parts/icons/icon', 'account' ); ?>
-      </a>
-    </div>
+    <?php get_template_part( 'template-parts/components/buttons/button', 'account-login' ); ?>
 
     <!-- Configured in customiser -->
     <?php get_template_part( 'template-parts/components/buttons/button', 'header-cta' ); ?>

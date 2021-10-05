@@ -47,12 +47,14 @@
             </h1>
           </div>
 
-          <div class="header__item header__item--nav">
-            <!-- Main (primary) Navigation -->
-            <?php if ( has_nav_menu( 'primary' ) ) : ?>
-              <?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-            <?php endif; ?>
-          </div>
+          <?php if (is_user_logged_in()): ?>
+            <div class="header__item header__item--nav">
+              <!-- Main (primary) Navigation -->
+              <?php if ( has_nav_menu( 'primary' ) ) : ?>
+                <?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+              <?php endif; ?>
+            </div>
+          <?php endif; ?>
 
           <div class="header__item header__item--tools<?php if ( get_theme_mod( 'enable_language_switcher' ) === true ) echo ' header__item--language-switcher'; ?>">
             <?php if ( get_theme_mod( 'enable_language_switcher' ) ) :

@@ -358,7 +358,6 @@
 }
 
 @mixin button_small {
-  font-size: 18px;
   padding: 4px 12px;
 
   @include break-min($lg) {
