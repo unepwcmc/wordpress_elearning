@@ -53,6 +53,8 @@
   }
 
   .wp-block-embed.is-type-video {
+    @include ignore_restrained_width;
+
     .wp-block-embed__wrapper {
       padding-bottom: calc((9 / 16) * 100%);
 
