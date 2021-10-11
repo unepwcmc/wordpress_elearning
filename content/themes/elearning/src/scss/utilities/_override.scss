@@ -19,6 +19,21 @@
   min-width: 140px;
 }
 
+.ld-logout.ld-logout.ld-login-text.ld-login-button.ld-button {
+  margin-left: auto;
+  max-width: 200px;
+
+  display: block;
+  justify-content: center;
+
+  .ld-icon.ld-icon-arrow-right.ld-icon-right {
+    position: absolute;
+    top: 0;
+    right: 1em;
+    transform: translateY(-50%);
+  }
+}
+
 @media (max-width: 640px) {
   .learndash-wrapper .ld-button {
     margin-left: 0;
