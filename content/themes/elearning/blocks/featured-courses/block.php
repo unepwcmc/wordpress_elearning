@@ -23,19 +23,20 @@
 
           <?php while ( block_rows( 'courses' ) ) : block_row( 'courses' );?>
             <?php
-              $post = block_sub_value( 'course' );
-              $post_meta = get_post_meta($post->ID);
-              $post_url = get_the_permalink($post->ID);
-              $course_steps = intval($post_meta['_ld_course_steps_count'][0]);
+              $course = block_sub_value( 'course' );
+              $course_meta = get_post_meta($course->ID);
+              $course_url = get_the_permalink($course->ID);
+              $course_steps = intval($course_meta['_ld_course_steps_count'][0]);
               $lessons_text = $course_steps > 1 ? 'lessons' : 'lesson';
+              $course_date_modified = date_create($course->post_modified);
 
-              $course_price_object = learndash_get_course_price($post->ID);
+              $course_price_object = learndash_get_course_price($course->ID);
               $course_price = array(
                 'type' => $course_price_object['type'],
                 'value' => $course_price_object['price']
               );
 
-              $image_id = $post_meta['_thumbnail_id'][0];
+              $image_id = $course_meta['_thumbnail_id'][0];
               $image_url = wp_get_attachment_image_src($image_id, 'full-size')[0];
             ?>
 
@@ -47,7 +48,7 @@
                     <div class="featured-course__image-wrap">
                       <img
                         src="<?php echo $image_url; ?>"
-                        alt="<?php echo $post->post_title; ?>"
+                        alt="<?php echo $course->post_title; ?>"
                         class="featured-course__image"
                       >
                     </div>
@@ -55,12 +56,12 @@
                   <div class="featured-course__column">
                     <div class="featured-course__content">
                       <p class="featured-course__date">
-                        09 May 21
+                        <?php echo date_format($course_date_modified,"d M y"); ?>
                       </p>
 
                       <h4 class="featured-course__heading">
-                        <?php echo $post->post_title; ?>
-                      </h3>
+                        <?php echo $course->post_title; ?>
+                      </h4>
 
                       <p class="featured-course__detail">
                         <?php get_template_part( 'template-parts/icons/icon', 'money' ); ?>
@@ -79,13 +80,13 @@
                   </div>
                 </div>
                 <a
-                  href="<?php echo $post_url; ?>"
+                  href="<?php echo $course_url; ?>"
                   class="featured-course__fauxlink"
                 >
                   <?php _e( 'View course', 'wcmc' ); ?>
                 </a>
               </article>
-
+            
             </li>
           <?php endwhile; ?>
 
