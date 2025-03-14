@@ -1,3 +1,5 @@
+# Capfile
+
 # Load DSL and Setup Up Stages
 require 'capistrano/setup'
 
@@ -14,12 +16,15 @@ install_plugin Capistrano::SCM::Git::WithSubmodules
 
 # Includes everything else
 require 'yaml'
-
 require 'capistrano/file-permissions'
+
+# Configure services
+set :services, [:apache2]
+require 'capistrano/service'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
 
-
-set :services, [:apache2]
-require 'capistrano/service'
+# Optional: Configure rbenv
+set :rbenv_type, :user
+set :rbenv_ruby, '3.2.0'
